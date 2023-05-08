@@ -1,4 +1,4 @@
-﻿import tkinter as tk
+import tkinter as tk
 from tkinter import messagebox
 import time
 
@@ -127,24 +127,22 @@ def add_bid():
     bids[bidder_id] = bid_amount
 
 
-# Add functionality to buttons
+# Добавление функциональности для кнопок
 start_auction_button.config(command=start_timer)
 stop_auction_button.config(command=stop_timer)
 change_image_button.config(command=change_image)
 add_bid_button.config(command=add_bid)
 
-# Create labels for timer and current bid
 timer_label = tk.Label(window, text="Прошло времени: 00:00")
 current_bid_label = tk.Label(window, text="Высшая ставка: \n ID \t Ставка")
 timer_label.grid(row=8, column=0, columnspan=2)
 current_bid_label.grid(row=9, column=0, columnspan=2)
 
-# Create entry fields for bids
+# Создание строки ввода
 id_entry = tk.Entry(window)
 id_entry.grid(row=10, column=0)
 
 amount_entry = tk.Entry(window)
 amount_entry.grid(row=10, column=1)
 
-# Run the window
 window.mainloop()
