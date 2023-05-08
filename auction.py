@@ -105,8 +105,8 @@ def stop_timer():
 def show_winner():
     winner_id = highest_bidder
     winner_bid = highest_bid
-    messagebox.showinfo("Auction Winner",
-                        "The winner of the auction {} with a bid of {}.".format(winner_id, winner_bid))
+    messagebox.showinfo("Победитель аукциона",
+                        "Владельцем земли становится участник с id : {} ежемесячный налог на участок составляет: {}.".format(winner_id, winner_bid))
 
 
 # Создание функции для добавления ставки
