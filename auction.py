@@ -20,7 +20,7 @@ def begin_Auction():
 	this_description_label = tk.Label(a, text="Описание:")
 	this_area_label = tk.Label(a, text="Площадь:")
 	this_price_label = tk.Label(a, text="Цена:")
-	this_tax_value_label = tk.Label(a, text="Начальная цена:")
+	this_tax_value_label = tk.Label(a, text="Начальная ставка:")
 	this_step_label = tk.Label(a, text="Шаг:")
 
 	# Создаем метки для полей
@@ -76,7 +76,7 @@ def begin_Auction():
 	change_image_button.grid(row=7, column=0)
 	add_bid_button.grid(row=10, column=3)
 
-	# Создаем функцию для таймера
+	# Функция для таймера
 	def start_timer():
 		nonlocal timer_running
 		timer_running = True
@@ -95,13 +95,13 @@ def begin_Auction():
 			else:
 				a.after(1000, update_timer, start_time)
 
-	# Создание функции для остановки таймера
+	# Функции для остановки таймера
 	def stop_timer():
 		nonlocal timer_running
 		timer_running = False
 		show_winner()
 
-	# Создание функции для показа победителя
+	# Функции для показа победителя
 	def show_winner():
 		winner_id = highest_bidder
 		winner_bid = highest_bid
@@ -129,19 +129,18 @@ def begin_Auction():
 			current_bid_label.config(text="Текущая ставка - ID: {} - {}$".format(highest_bidder, highest_bid))
 		bids[bidder_id] = bid_amount
 
-	# Add functionality to buttons
+	# Функциональность кнопок
 	start_auction_button.config(command=start_timer)
 	stop_auction_button.config(command=stop_timer)
 	change_image_button.config(command=change_image)
 	add_bid_button.config(command=add_bid)
 
-	# Create labels for timer and current bid
 	timer_label = tk.Label(a, text="Прошло времени: 00:00", font=("Arial", 12))
 	current_bid_label = tk.Label(a, text="Высшая ставка: \n ID \t Ставка", font=("Arial", 12, ))
 	timer_label.grid(row=8, column=1, columnspan=2)
 	current_bid_label.grid(row=9, column=1, columnspan=2)
 
-	# Create entry fields for bids
+	# Строки ввода для ставок
 	id_entry = tk.Entry(a)
 	id_entry.grid(row=10, column=1)
 
@@ -149,9 +148,9 @@ def begin_Auction():
 	amount_entry.grid(row=10, column=2)
 
 
-# Создаем окно
+# Окно
 window = tk.Tk()
-window.title("Информация об Аукционе")
+window.title("Информация о лоте")
 
 window.update_idletasks()
 s = window.geometry()
@@ -168,15 +167,15 @@ w = w - width_window // 2
 h = h - height_window // 2
 window.geometry('+{}+{}'.format(w, h))
 
-# Создаем метки для полей
+# Метки для полей
 name_label = tk.Label(window, text="Название")
 description_label = tk.Label(window, text="Описание")
 area_label = tk.Label(window, text="Площадь")
 price_label = tk.Label(window, text="Цена")
-tax_value_label = tk.Label(window, text="Начальная цена")
+tax_value_label = tk.Label(window, text="Начальная ставка")
 step_label = tk.Label(window, text="Шаг")
 
-# Создаем поля ввода
+# Поля ввода
 name_entry = tk.Entry(window)
 description_entry = tk.Entry(window)
 area_entry = tk.Entry(window)
@@ -184,7 +183,7 @@ price_entry = tk.Entry(window)
 tax_value_entry = tk.Entry(window)
 step_entry = tk.Entry(window)
 
-# Добавляем метки и поля в окно
+# Метки и поля в окно
 name_label.grid(row=0, column=0)
 name_entry.grid(row=0, column=1)
 
